@@ -28,15 +28,15 @@ class Auth extends BaseController
                 session()->set($key);
                 return redirect()->to(base_url('home'))->withInput();
             } else {
-                return redirect()->to(base_url(''))->with('error', 'password tidak sesuai');
+                return redirect()->to(base_url(''))->with('error', 'Password tidak sesuai');
             }
         } else {
-            return redirect()->to(base_url(''))->with('error', 'email tidak sesuai');
+            return redirect()->to(base_url(''))->with('error', 'Email tidak sesuai');
         }
     }
     public function logout()
     {
         session()->remove('id', 'name', 'email');
-        return redirect()->to(base_url())->with('error', 'anda sudah Logout');
+        return redirect()->to(base_url())->with('error', 'Anda sudah Logout');
     }
 }
