@@ -7,7 +7,7 @@
 				<div class="">
 					<div class="page-title">
 						<div class="title_left">
-					<h3><a href="<?=base_url('staff-add/')?>" class="btn btn-round btn-success btn-sm"><i class="fa fa-plus"></i></a>Daftar Staff</h3>
+					<h3><a href="<?=base_url('category-add/')?>" class="btn btn-round btn-success btn-sm"><i class="fa fa-plus"></i></a>Daftar Category</h3>
                 </div>
 						</div>
 					</div>
@@ -23,22 +23,18 @@
                                 <center>Name</center>
                             </th>
                             <th>
-                                <center>Email</center>
-                            </th>
-                            <th>
                                 <center>Tool</center>
                             </th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach($staff as $item) :?>
+                        <?php foreach($category as $item) :?>
                         <tr>
-                        <td><?= $item['name']?></td>
-                        <td><?= $item['email']?></td>
+                        <td><?= $item['category']?></td>
                         <td>
                             <center>
-                                <a href="<?=base_url('staff-edit/') . $item['id']?>" class="btn btn-round btn-info btn-sm"><i class="fa fa-pencil"></i></a>
-                                <a href="<?=base_url('staff-del/') . $item['id']?>" class="btn btn-round btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+                                <a href="<?=base_url('category-edit/') . $item['id']?>" class="btn btn-round btn-info btn-sm"><i class="fa fa-pencil"></i></a>
+                                <a href="<?=base_url('category-del/') . $item['id']?>" class="btn btn-round btn-danger btn-sm"><i class="fa fa-trash"></i></a>
                             </center>
                         </td>
                         </tr>
