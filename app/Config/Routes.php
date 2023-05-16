@@ -63,6 +63,12 @@ $routes->get('/borrower-edit/(:num)', 'Borrower::edit/$1');
 $routes->post('/borrower-editpro', 'Borrower::editpro');
 $routes->get('/borrower-del/(:num)', 'Borrower::del/$1');
 
+$routes->get('/book', 'Book::index');
+$routes->get('/book-add', 'Book::add');
+$routes->post('/book-addpro', 'Book::addpro');
+$routes->get('/book-edit/(:num)', 'Book::edit/$1');
+$routes->post('/book-editpro', 'Book::editpro');
+$routes->get('/book-del/(:num)', 'Book::del/$1');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

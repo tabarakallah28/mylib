@@ -117,7 +117,7 @@ class Publisher extends BaseController
                 session()->setFlashdata('validation',$validation->getErrors());
                 return redirect()->to('publisher-add')->withInput();
             }
-            $this->staffmodel->save([
+            $this->publishermodel->save([
                 'id'    => $post['id'],
                 'name' => $post['name'],
                 'contact' =>$post['contact'],
@@ -145,7 +145,7 @@ class Publisher extends BaseController
             ])){
                 $validation = \config\Services::validation();
                 session()->setFlashdata('validation',$validation->getErrors());
-                return redirect()->to('publisher-add')->withInput();
+                return redirect()->to('publisher-edit/'.$post['id'])->withInput();
             }
             $this->publishermodel->save([
                 'id'    => $post['id'],

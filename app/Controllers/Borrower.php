@@ -65,7 +65,9 @@ class Borrower extends BaseController
             'contact' => [
                 'rules' => 'required',
                 'errors' => [
-                    'required' => 'wajib diisi'],
+                    'required' => 'wajib diisi',
+                    'is_unique' => 'email sudah terdaftar'
+                ],
             ],
             'email' => [
                 'rules' => 'required|is_unique[staff.email]',
@@ -154,7 +156,7 @@ class Borrower extends BaseController
             ])){
                 $validation = \config\Services::validation();
                 session()->setFlashdata('validation',$validation->getErrors());
-                return redirect()->to('borrower-add')->withInput();
+                return redirect()->to('borrower-edit/'.$post['id'])->withInput();
             }
             $this->borrowermodel->save([
                 'id'    => $post['id'],
