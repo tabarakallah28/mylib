@@ -1,0 +1,591 @@
+INFO - 2023-05-17 08:42:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 08:42:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 08:42:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 08:42:13 --> CSRF token verified.
+INFO - 2023-05-17 08:42:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 08:42:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 08:42:18 --> CSRF token verified.
+INFO - 2023-05-17 08:42:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 08:42:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 08:42:20 --> CSRF token verified.
+INFO - 2023-05-17 08:42:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 08:42:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 08:42:27 --> CSRF token verified.
+INFO - 2023-05-17 08:42:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 08:42:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 08:43:42 --> CSRF token verified.
+INFO - 2023-05-17 08:43:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 08:43:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 08:43:57 --> CSRF token verified.
+INFO - 2023-05-17 08:43:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 08:43:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 08:45:10 --> CSRF token verified.
+INFO - 2023-05-17 08:45:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 08:45:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 08:45:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 08:45:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 08:45:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 08:45:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 09:04:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-05-17 09:04:41 --> mysqli_sql_exception: Unknown column 'borrow.title' in 'field list' in C:\laragon\www\mylib\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\laragon\www\mylib\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `borrow`...', 0)
+#1 C:\laragon\www\mylib\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `borrow`...')
+#2 C:\laragon\www\mylib\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `borrow`...')
+#3 C:\laragon\www\mylib\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `borrow`...', Array, false)
+#4 C:\laragon\www\mylib\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\mylib\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\laragon\www\mylib\app\Controllers\Borrow.php(35): CodeIgniter\BaseModel->findAll()
+#7 C:\laragon\www\mylib\system\CodeIgniter.php(934): App\Controllers\Borrow->index()
+#8 C:\laragon\www\mylib\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Borrow))
+#9 C:\laragon\www\mylib\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\mylib\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-05-17 09:04:41 --> Unknown column 'borrow.title' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `borrow`.`id` as `id`, `borrow`.`title`, `borrow`.`author`, `borrow`.`publication_year`, `publisher`.`name`, `category`.`category`, `borrow`.`quantity`
+FROM `borrow`
+LEFT JOIN `publisher` ON `borrow`.`id_publisher`=`publisher`.`id`
+LEFT JOIN `category` ON `borrow`.`id_category`=`category`.`id`
+WHERE `borrow`.`deleted_at` IS NULL', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `borrow`.`id` as `id`, `borrow`.`title`, `borrow`.`author`, `borrow`.`publication_year`, `publisher`.`name`, `category`.`category`, `borrow`.`quantity`
+FROM `borrow`
+LEFT JOIN `publisher` ON `borrow`.`id_publisher`=`publisher`.`id`
+LEFT JOIN `category` ON `borrow`.`id_category`=`category`.`id`
+WHERE `borrow`.`deleted_at` IS NULL')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `borrow`.`id` as `id`, `borrow`.`title`, `borrow`.`author`, `borrow`.`publication_year`, `publisher`.`name`, `category`.`category`, `borrow`.`quantity`
+FROM `borrow`
+LEFT JOIN `publisher` ON `borrow`.`id_publisher`=`publisher`.`id`
+LEFT JOIN `category` ON `borrow`.`id_category`=`category`.`id`
+WHERE `borrow`.`deleted_at` IS NULL')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `borrow`.`id` as `id`, `borrow`.`title`, `borrow`.`author`, `borrow`.`publication_year`, `publisher`.`name`, `category`.`category`, `borrow`.`quantity`
+FROM `borrow`
+LEFT JOIN `publisher` ON `borrow`.`id_publisher`=`publisher`.`id`
+LEFT JOIN `category` ON `borrow`.`id_category`=`category`.`id`
+WHERE `borrow`.`deleted_at` IS NULL', [], false)
+ 5 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Borrow.php(35): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Borrow->index()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Borrow))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-05-17 09:05:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-05-17 09:05:34 --> mysqli_sql_exception: Unknown column 'borrow.title' in 'field list' in C:\laragon\www\mylib\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\laragon\www\mylib\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `borrow`...', 0)
+#1 C:\laragon\www\mylib\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `borrow`...')
+#2 C:\laragon\www\mylib\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `borrow`...')
+#3 C:\laragon\www\mylib\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `borrow`...', Array, false)
+#4 C:\laragon\www\mylib\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\mylib\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\laragon\www\mylib\app\Controllers\Borrow.php(29): CodeIgniter\BaseModel->findAll()
+#7 C:\laragon\www\mylib\system\CodeIgniter.php(934): App\Controllers\Borrow->index()
+#8 C:\laragon\www\mylib\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Borrow))
+#9 C:\laragon\www\mylib\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\mylib\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-05-17 09:05:34 --> Unknown column 'borrow.title' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `borrow`.`id` as `id`, `borrow`.`title`, `borrow`.`author`, `borrow`.`publication_year`, `publisher`.`name`, `category`.`category`, `borrow`.`quantity`
+FROM `borrow`
+LEFT JOIN `publisher` ON `borrow`.`id_publisher`=`publisher`.`id`
+LEFT JOIN `category` ON `borrow`.`id_category`=`category`.`id`
+WHERE `borrow`.`deleted_at` IS NULL', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `borrow`.`id` as `id`, `borrow`.`title`, `borrow`.`author`, `borrow`.`publication_year`, `publisher`.`name`, `category`.`category`, `borrow`.`quantity`
+FROM `borrow`
+LEFT JOIN `publisher` ON `borrow`.`id_publisher`=`publisher`.`id`
+LEFT JOIN `category` ON `borrow`.`id_category`=`category`.`id`
+WHERE `borrow`.`deleted_at` IS NULL')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `borrow`.`id` as `id`, `borrow`.`title`, `borrow`.`author`, `borrow`.`publication_year`, `publisher`.`name`, `category`.`category`, `borrow`.`quantity`
+FROM `borrow`
+LEFT JOIN `publisher` ON `borrow`.`id_publisher`=`publisher`.`id`
+LEFT JOIN `category` ON `borrow`.`id_category`=`category`.`id`
+WHERE `borrow`.`deleted_at` IS NULL')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `borrow`.`id` as `id`, `borrow`.`title`, `borrow`.`author`, `borrow`.`publication_year`, `publisher`.`name`, `category`.`category`, `borrow`.`quantity`
+FROM `borrow`
+LEFT JOIN `publisher` ON `borrow`.`id_publisher`=`publisher`.`id`
+LEFT JOIN `category` ON `borrow`.`id_category`=`category`.`id`
+WHERE `borrow`.`deleted_at` IS NULL', [], false)
+ 5 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Borrow.php(29): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Borrow->index()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Borrow))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-05-17 09:05:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-05-17 09:05:36 --> mysqli_sql_exception: Unknown column 'borrow.title' in 'field list' in C:\laragon\www\mylib\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\laragon\www\mylib\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `borrow`...', 0)
+#1 C:\laragon\www\mylib\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `borrow`...')
+#2 C:\laragon\www\mylib\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `borrow`...')
+#3 C:\laragon\www\mylib\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `borrow`...', Array, false)
+#4 C:\laragon\www\mylib\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\mylib\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\laragon\www\mylib\app\Controllers\Borrow.php(29): CodeIgniter\BaseModel->findAll()
+#7 C:\laragon\www\mylib\system\CodeIgniter.php(934): App\Controllers\Borrow->index()
+#8 C:\laragon\www\mylib\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Borrow))
+#9 C:\laragon\www\mylib\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\mylib\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-05-17 09:05:36 --> Unknown column 'borrow.title' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `borrow`.`id` as `id`, `borrow`.`title`, `borrow`.`author`, `borrow`.`publication_year`, `publisher`.`name`, `category`.`category`, `borrow`.`quantity`
+FROM `borrow`
+LEFT JOIN `publisher` ON `borrow`.`id_publisher`=`publisher`.`id`
+LEFT JOIN `category` ON `borrow`.`id_category`=`category`.`id`
+WHERE `borrow`.`deleted_at` IS NULL', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `borrow`.`id` as `id`, `borrow`.`title`, `borrow`.`author`, `borrow`.`publication_year`, `publisher`.`name`, `category`.`category`, `borrow`.`quantity`
+FROM `borrow`
+LEFT JOIN `publisher` ON `borrow`.`id_publisher`=`publisher`.`id`
+LEFT JOIN `category` ON `borrow`.`id_category`=`category`.`id`
+WHERE `borrow`.`deleted_at` IS NULL')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `borrow`.`id` as `id`, `borrow`.`title`, `borrow`.`author`, `borrow`.`publication_year`, `publisher`.`name`, `category`.`category`, `borrow`.`quantity`
+FROM `borrow`
+LEFT JOIN `publisher` ON `borrow`.`id_publisher`=`publisher`.`id`
+LEFT JOIN `category` ON `borrow`.`id_category`=`category`.`id`
+WHERE `borrow`.`deleted_at` IS NULL')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `borrow`.`id` as `id`, `borrow`.`title`, `borrow`.`author`, `borrow`.`publication_year`, `publisher`.`name`, `category`.`category`, `borrow`.`quantity`
+FROM `borrow`
+LEFT JOIN `publisher` ON `borrow`.`id_publisher`=`publisher`.`id`
+LEFT JOIN `category` ON `borrow`.`id_category`=`category`.`id`
+WHERE `borrow`.`deleted_at` IS NULL', [], false)
+ 5 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Borrow.php(29): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Borrow->index()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Borrow))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-05-17 09:05:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-05-17 09:05:37 --> mysqli_sql_exception: Unknown column 'borrow.title' in 'field list' in C:\laragon\www\mylib\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\laragon\www\mylib\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `borrow`...', 0)
+#1 C:\laragon\www\mylib\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `borrow`...')
+#2 C:\laragon\www\mylib\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `borrow`...')
+#3 C:\laragon\www\mylib\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `borrow`...', Array, false)
+#4 C:\laragon\www\mylib\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\mylib\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\laragon\www\mylib\app\Controllers\Borrow.php(29): CodeIgniter\BaseModel->findAll()
+#7 C:\laragon\www\mylib\system\CodeIgniter.php(934): App\Controllers\Borrow->index()
+#8 C:\laragon\www\mylib\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Borrow))
+#9 C:\laragon\www\mylib\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\mylib\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-05-17 09:05:37 --> Unknown column 'borrow.title' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `borrow`.`id` as `id`, `borrow`.`title`, `borrow`.`author`, `borrow`.`publication_year`, `publisher`.`name`, `category`.`category`, `borrow`.`quantity`
+FROM `borrow`
+LEFT JOIN `publisher` ON `borrow`.`id_publisher`=`publisher`.`id`
+LEFT JOIN `category` ON `borrow`.`id_category`=`category`.`id`
+WHERE `borrow`.`deleted_at` IS NULL', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `borrow`.`id` as `id`, `borrow`.`title`, `borrow`.`author`, `borrow`.`publication_year`, `publisher`.`name`, `category`.`category`, `borrow`.`quantity`
+FROM `borrow`
+LEFT JOIN `publisher` ON `borrow`.`id_publisher`=`publisher`.`id`
+LEFT JOIN `category` ON `borrow`.`id_category`=`category`.`id`
+WHERE `borrow`.`deleted_at` IS NULL')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `borrow`.`id` as `id`, `borrow`.`title`, `borrow`.`author`, `borrow`.`publication_year`, `publisher`.`name`, `category`.`category`, `borrow`.`quantity`
+FROM `borrow`
+LEFT JOIN `publisher` ON `borrow`.`id_publisher`=`publisher`.`id`
+LEFT JOIN `category` ON `borrow`.`id_category`=`category`.`id`
+WHERE `borrow`.`deleted_at` IS NULL')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `borrow`.`id` as `id`, `borrow`.`title`, `borrow`.`author`, `borrow`.`publication_year`, `publisher`.`name`, `category`.`category`, `borrow`.`quantity`
+FROM `borrow`
+LEFT JOIN `publisher` ON `borrow`.`id_publisher`=`publisher`.`id`
+LEFT JOIN `category` ON `borrow`.`id_category`=`category`.`id`
+WHERE `borrow`.`deleted_at` IS NULL', [], false)
+ 5 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Borrow.php(29): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Borrow->index()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Borrow))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-05-17 09:05:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-05-17 09:05:37 --> mysqli_sql_exception: Unknown column 'borrow.title' in 'field list' in C:\laragon\www\mylib\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\laragon\www\mylib\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `borrow`...', 0)
+#1 C:\laragon\www\mylib\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `borrow`...')
+#2 C:\laragon\www\mylib\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `borrow`...')
+#3 C:\laragon\www\mylib\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `borrow`...', Array, false)
+#4 C:\laragon\www\mylib\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\mylib\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\laragon\www\mylib\app\Controllers\Borrow.php(29): CodeIgniter\BaseModel->findAll()
+#7 C:\laragon\www\mylib\system\CodeIgniter.php(934): App\Controllers\Borrow->index()
+#8 C:\laragon\www\mylib\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Borrow))
+#9 C:\laragon\www\mylib\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\mylib\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-05-17 09:05:37 --> Unknown column 'borrow.title' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `borrow`.`id` as `id`, `borrow`.`title`, `borrow`.`author`, `borrow`.`publication_year`, `publisher`.`name`, `category`.`category`, `borrow`.`quantity`
+FROM `borrow`
+LEFT JOIN `publisher` ON `borrow`.`id_publisher`=`publisher`.`id`
+LEFT JOIN `category` ON `borrow`.`id_category`=`category`.`id`
+WHERE `borrow`.`deleted_at` IS NULL', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `borrow`.`id` as `id`, `borrow`.`title`, `borrow`.`author`, `borrow`.`publication_year`, `publisher`.`name`, `category`.`category`, `borrow`.`quantity`
+FROM `borrow`
+LEFT JOIN `publisher` ON `borrow`.`id_publisher`=`publisher`.`id`
+LEFT JOIN `category` ON `borrow`.`id_category`=`category`.`id`
+WHERE `borrow`.`deleted_at` IS NULL')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `borrow`.`id` as `id`, `borrow`.`title`, `borrow`.`author`, `borrow`.`publication_year`, `publisher`.`name`, `category`.`category`, `borrow`.`quantity`
+FROM `borrow`
+LEFT JOIN `publisher` ON `borrow`.`id_publisher`=`publisher`.`id`
+LEFT JOIN `category` ON `borrow`.`id_category`=`category`.`id`
+WHERE `borrow`.`deleted_at` IS NULL')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `borrow`.`id` as `id`, `borrow`.`title`, `borrow`.`author`, `borrow`.`publication_year`, `publisher`.`name`, `category`.`category`, `borrow`.`quantity`
+FROM `borrow`
+LEFT JOIN `publisher` ON `borrow`.`id_publisher`=`publisher`.`id`
+LEFT JOIN `category` ON `borrow`.`id_category`=`category`.`id`
+WHERE `borrow`.`deleted_at` IS NULL', [], false)
+ 5 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Borrow.php(29): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Borrow->index()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Borrow))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-05-17 09:05:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 09:05:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-05-17 09:05:42 --> mysqli_sql_exception: Unknown column 'borrow.title' in 'field list' in C:\laragon\www\mylib\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\laragon\www\mylib\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `borrow`...', 0)
+#1 C:\laragon\www\mylib\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `borrow`...')
+#2 C:\laragon\www\mylib\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `borrow`...')
+#3 C:\laragon\www\mylib\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `borrow`...', Array, false)
+#4 C:\laragon\www\mylib\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\mylib\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\laragon\www\mylib\app\Controllers\Borrow.php(29): CodeIgniter\BaseModel->findAll()
+#7 C:\laragon\www\mylib\system\CodeIgniter.php(934): App\Controllers\Borrow->index()
+#8 C:\laragon\www\mylib\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Borrow))
+#9 C:\laragon\www\mylib\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\mylib\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-05-17 09:05:42 --> Unknown column 'borrow.title' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `borrow`.`id` as `id`, `borrow`.`title`, `borrow`.`author`, `borrow`.`publication_year`, `publisher`.`name`, `category`.`category`, `borrow`.`quantity`
+FROM `borrow`
+LEFT JOIN `publisher` ON `borrow`.`id_publisher`=`publisher`.`id`
+LEFT JOIN `category` ON `borrow`.`id_category`=`category`.`id`
+WHERE `borrow`.`deleted_at` IS NULL', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `borrow`.`id` as `id`, `borrow`.`title`, `borrow`.`author`, `borrow`.`publication_year`, `publisher`.`name`, `category`.`category`, `borrow`.`quantity`
+FROM `borrow`
+LEFT JOIN `publisher` ON `borrow`.`id_publisher`=`publisher`.`id`
+LEFT JOIN `category` ON `borrow`.`id_category`=`category`.`id`
+WHERE `borrow`.`deleted_at` IS NULL')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `borrow`.`id` as `id`, `borrow`.`title`, `borrow`.`author`, `borrow`.`publication_year`, `publisher`.`name`, `category`.`category`, `borrow`.`quantity`
+FROM `borrow`
+LEFT JOIN `publisher` ON `borrow`.`id_publisher`=`publisher`.`id`
+LEFT JOIN `category` ON `borrow`.`id_category`=`category`.`id`
+WHERE `borrow`.`deleted_at` IS NULL')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `borrow`.`id` as `id`, `borrow`.`title`, `borrow`.`author`, `borrow`.`publication_year`, `publisher`.`name`, `category`.`category`, `borrow`.`quantity`
+FROM `borrow`
+LEFT JOIN `publisher` ON `borrow`.`id_publisher`=`publisher`.`id`
+LEFT JOIN `category` ON `borrow`.`id_category`=`category`.`id`
+WHERE `borrow`.`deleted_at` IS NULL', [], false)
+ 5 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Borrow.php(29): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Borrow->index()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Borrow))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-05-17 09:06:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-05-17 09:06:06 --> Undefined variable $data
+in APPPATH\Controllers\Borrow.php on line 24.
+ 1 APPPATH\Controllers\Borrow.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'C:\\laragon\\www\\mylib\\app\\Controllers\\Borrow.php', 24)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Borrow->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Borrow))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-05-17 09:06:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-05-17 09:06:07 --> Undefined variable $data
+in APPPATH\Controllers\Borrow.php on line 24.
+ 1 APPPATH\Controllers\Borrow.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'C:\\laragon\\www\\mylib\\app\\Controllers\\Borrow.php', 24)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Borrow->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Borrow))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-05-17 09:07:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 09:11:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-05-17 09:11:48 --> Undefined variable $publisher
+in APPPATH\Views\borrow\form.php on line 60.
+ 1 APPPATH\Views\borrow\form.php(60): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $publisher', 'C:\\laragon\\www\\mylib\\app\\Views\\borrow\\form.php', 60)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\laragon\\www\\mylib\\app\\Views\\borrow\\form.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('borrow/form', [], true)
+ 5 APPPATH\Controllers\Borrow.php(34): view('borrow/form')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Borrow->add()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Borrow))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-05-17 09:11:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 09:16:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-05-17 09:16:29 --> Undefined array key "title"
+in APPPATH\Views\borrow\index.php on line 48.
+ 1 APPPATH\Views\borrow\index.php(48): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "title"', 'C:\\laragon\\www\\mylib\\app\\Views\\borrow\\index.php', 48)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\laragon\\www\\mylib\\app\\Views\\borrow\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('borrow/index', [], true)
+ 5 APPPATH\Controllers\Borrow.php(25): view('borrow/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Borrow->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Borrow))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-05-17 09:16:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 09:16:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-05-17 09:16:35 --> Undefined array key "title"
+in APPPATH\Views\borrow\index.php on line 48.
+ 1 APPPATH\Views\borrow\index.php(48): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "title"', 'C:\\laragon\\www\\mylib\\app\\Views\\borrow\\index.php', 48)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\laragon\\www\\mylib\\app\\Views\\borrow\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('borrow/index', [], true)
+ 5 APPPATH\Controllers\Borrow.php(25): view('borrow/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Borrow->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Borrow))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-05-17 09:19:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-05-17 09:19:07 --> Undefined array key "name"
+in APPPATH\Views\borrow\index.php on line 48.
+ 1 APPPATH\Views\borrow\index.php(48): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name"', 'C:\\laragon\\www\\mylib\\app\\Views\\borrow\\index.php', 48)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\laragon\\www\\mylib\\app\\Views\\borrow\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('borrow/index', [], true)
+ 5 APPPATH\Controllers\Borrow.php(25): view('borrow/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Borrow->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Borrow))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-05-17 09:19:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-05-17 09:19:08 --> Undefined array key "name"
+in APPPATH\Views\borrow\index.php on line 48.
+ 1 APPPATH\Views\borrow\index.php(48): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name"', 'C:\\laragon\\www\\mylib\\app\\Views\\borrow\\index.php', 48)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\laragon\\www\\mylib\\app\\Views\\borrow\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('borrow/index', [], true)
+ 5 APPPATH\Controllers\Borrow.php(25): view('borrow/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Borrow->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Borrow))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-05-17 09:19:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-05-17 09:19:09 --> Undefined array key "name"
+in APPPATH\Views\borrow\index.php on line 48.
+ 1 APPPATH\Views\borrow\index.php(48): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name"', 'C:\\laragon\\www\\mylib\\app\\Views\\borrow\\index.php', 48)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\laragon\\www\\mylib\\app\\Views\\borrow\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('borrow/index', [], true)
+ 5 APPPATH\Controllers\Borrow.php(25): view('borrow/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Borrow->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Borrow))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-05-17 09:19:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-05-17 09:19:09 --> Undefined array key "name"
+in APPPATH\Views\borrow\index.php on line 48.
+ 1 APPPATH\Views\borrow\index.php(48): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name"', 'C:\\laragon\\www\\mylib\\app\\Views\\borrow\\index.php', 48)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\laragon\\www\\mylib\\app\\Views\\borrow\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('borrow/index', [], true)
+ 5 APPPATH\Controllers\Borrow.php(25): view('borrow/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Borrow->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Borrow))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-05-17 09:19:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-05-17 09:19:09 --> Undefined array key "name"
+in APPPATH\Views\borrow\index.php on line 48.
+ 1 APPPATH\Views\borrow\index.php(48): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name"', 'C:\\laragon\\www\\mylib\\app\\Views\\borrow\\index.php', 48)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\laragon\\www\\mylib\\app\\Views\\borrow\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('borrow/index', [], true)
+ 5 APPPATH\Controllers\Borrow.php(25): view('borrow/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Borrow->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Borrow))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-05-17 09:35:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-05-17 09:35:25 --> Undefined array key "name"
+in APPPATH\Views\borrow\index.php on line 48.
+ 1 APPPATH\Views\borrow\index.php(48): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name"', 'C:\\laragon\\www\\mylib\\app\\Views\\borrow\\index.php', 48)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\laragon\\www\\mylib\\app\\Views\\borrow\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('borrow/index', [], true)
+ 5 APPPATH\Controllers\Borrow.php(35): view('borrow/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Borrow->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Borrow))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-05-17 09:35:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 09:35:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-05-17 09:35:31 --> Undefined array key "name"
+in APPPATH\Views\borrow\index.php on line 48.
+ 1 APPPATH\Views\borrow\index.php(48): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name"', 'C:\\laragon\\www\\mylib\\app\\Views\\borrow\\index.php', 48)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\laragon\\www\\mylib\\app\\Views\\borrow\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('borrow/index', [], true)
+ 5 APPPATH\Controllers\Borrow.php(35): view('borrow/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Borrow->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Borrow))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-05-17 09:37:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-05-17 09:37:00 --> Undefined array key "borrower.name"
+in APPPATH\Views\borrow\index.php on line 48.
+ 1 APPPATH\Views\borrow\index.php(48): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "borrower.name"', 'C:\\laragon\\www\\mylib\\app\\Views\\borrow\\index.php', 48)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\laragon\\www\\mylib\\app\\Views\\borrow\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('borrow/index', [], true)
+ 5 APPPATH\Controllers\Borrow.php(35): view('borrow/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Borrow->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Borrow))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-05-17 09:37:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-05-17 09:37:13 --> Undefined array key "borrower.name"
+in APPPATH\Views\borrow\index.php on line 48.
+ 1 APPPATH\Views\borrow\index.php(48): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "borrower.name"', 'C:\\laragon\\www\\mylib\\app\\Views\\borrow\\index.php', 48)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\laragon\\www\\mylib\\app\\Views\\borrow\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('borrow/index', [], true)
+ 5 APPPATH\Controllers\Borrow.php(35): view('borrow/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Borrow->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Borrow))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-05-17 09:39:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 09:40:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-05-17 09:40:20 --> Undefined variable $publisher
+in APPPATH\Views\borrow\form.php on line 60.
+ 1 APPPATH\Views\borrow\form.php(60): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $publisher', 'C:\\laragon\\www\\mylib\\app\\Views\\borrow\\form.php', 60)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\laragon\\www\\mylib\\app\\Views\\borrow\\form.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('borrow/form', [], true)
+ 5 APPPATH\Controllers\Borrow.php(44): view('borrow/form')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Borrow->add()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Borrow))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-05-17 09:40:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 09:44:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 09:44:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-05-17 09:44:52 --> Call to a member function findAll() on null
+in APPPATH\Controllers\Borrow.php on line 45.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Borrow->add()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Borrow))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-05-17 09:45:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-05-17 09:45:30 --> Call to a member function findAll() on null
+in APPPATH\Controllers\Borrow.php on line 46.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Borrow->add()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Borrow))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-05-17 09:45:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-05-17 09:45:33 --> Call to a member function findAll() on null
+in APPPATH\Controllers\Borrow.php on line 46.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Borrow->add()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Borrow))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-05-17 09:45:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-05-17 09:45:49 --> Call to a member function findAll() on null
+in APPPATH\Controllers\Borrow.php on line 46.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Borrow->add()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Borrow))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-05-17 09:56:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-05-17 09:56:54 --> Call to a member function findAll() on null
+in APPPATH\Controllers\Borrow.php on line 46.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Borrow->add()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Borrow))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-05-17 09:56:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 09:56:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-05-17 09:56:59 --> Undefined array key "title"
+in APPPATH\Views\borrow\form.php on line 31.
+ 1 APPPATH\Views\borrow\form.php(31): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "title"', 'C:\\laragon\\www\\mylib\\app\\Views\\borrow\\form.php', 31)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\laragon\\www\\mylib\\app\\Views\\borrow\\form.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('borrow/form', [], true)
+ 5 APPPATH\Controllers\Borrow.php(105): view('borrow/form', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Borrow->edit('1')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Borrow))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-05-17 09:57:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 09:57:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 09:57:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 09:57:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 09:59:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-05-17 09:59:47 --> Call to a member function findAll() on null
+in APPPATH\Controllers\Borrow.php on line 46.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Borrow->add()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Borrow))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-05-17 09:59:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 10:11:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 10:11:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-05-17 10:11:08 --> Undefined array key "title"
+in APPPATH\Views\borrow\form.php on line 31.
+ 1 APPPATH\Views\borrow\form.php(31): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "title"', 'C:\\laragon\\www\\mylib\\app\\Views\\borrow\\form.php', 31)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\laragon\\www\\mylib\\app\\Views\\borrow\\form.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('borrow/form', [], true)
+ 5 APPPATH\Controllers\Borrow.php(105): view('borrow/form', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Borrow->edit('1')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Borrow))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-05-17 10:11:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 10:11:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-05-17 10:11:11 --> Call to a member function findAll() on null
+in APPPATH\Controllers\Borrow.php on line 46.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Borrow->add()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Borrow))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-05-17 10:11:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 10:17:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 10:17:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 10:17:46 --> CSRF token verified.
+INFO - 2023-05-17 10:17:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 10:17:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 10:17:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 10:17:53 --> CSRF token verified.
+INFO - 2023-05-17 10:17:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 10:17:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 10:18:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 10:30:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 10:31:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 10:31:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 10:31:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 10:33:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 10:33:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 10:33:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 10:35:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 10:35:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 10:35:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 10:35:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 10:35:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 10:35:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 10:36:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 10:36:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 10:36:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 11:26:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 11:26:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 11:26:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 11:27:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 11:27:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 11:27:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 11:27:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 11:28:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 11:28:30 --> CSRF token verified.
+INFO - 2023-05-17 11:28:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-17 11:28:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
