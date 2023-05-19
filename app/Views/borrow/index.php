@@ -7,7 +7,7 @@
     <div class="">
         <div class="page-title">
             <div class="title_left">
-                <h3><a href="<?= base_url('borrow-add') ?>" class="btn btn-round btn-success btn-sm"><i class="fa fa-plus"></i></a>Daftar Borrow</h3>
+                <h3><a href="<?= base_url('borrow-add') ?>" class="btn btn-round btn-success btn-sm"><i class="fa fa-plus"></i></a>Daftar </h3>
             </div>
         </div>
         <div class="clearfix"></div>
@@ -54,6 +54,7 @@
                                             <center>
                                                 <a href="<?= base_url('borrow-edit/') . $item['id'] ?>" class="btn btn-round btn-info btn-sm"><i class="fa fa-pencil"></i></a>
                                                 <a href="<?= base_url('borrow-delete/') . $item['id'] ?>" class="btn btn-round btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+                                                <a href="<?= base_url('borrow-return/') . $item['id'] ?>" class="btn btn-round btn-info btn-sm"><i class="fa fa-reply"></i></a>
                                             </center>
                                         </td>
                                     </tr>

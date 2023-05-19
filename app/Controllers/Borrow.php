@@ -72,10 +72,6 @@ class Borrow extends BaseController
                 'rules' => 'required',
                 'errors' => ['required' => 'wajib diisi'],
             ],
-            'id_staff' => [
-                'rules' => 'required',
-                'errors' => ['required' => 'wajib diisi'],
-            ],
             'release_date' => [
                 'rules' => 'required',
                 'errors' => ['required' => 'wajib diisi'],
@@ -97,7 +93,7 @@ class Borrow extends BaseController
         $this->borrowModel->save([
             'id_borrower' => $post['id_borrower'],
             'id_book' => $post['id_book'],
-            'id_staff' => $post['id_staff'],
+            'id_staff' => session('id'),
             'release_date' => $post['release_date'],
             'due_date' => $post['due_date'],
             'note' => $post['note'],
@@ -139,10 +135,6 @@ class Borrow extends BaseController
                 'rules' => 'required',
                 'errors' => ['required' => 'wajib diisi'],
             ],
-            'id_staff' => [
-                'rules' => 'required',
-                'errors' => ['required' => 'wajib diisi'],
-            ],
             'release_date' => [
                 'rules' => 'required',
                 'errors' => ['required' => 'wajib diisi'],
@@ -164,14 +156,25 @@ class Borrow extends BaseController
             'id' => $post['id'],
             'id_borrower' => $post['id_borrower'],
             'id_book' => $post['id_book'],
-            'id_staff' => $post['id_staff'],
+            'id_staff' => session('id'),
             'release_date' => $post['release_date'],
             'due_date' => $post['due_date'],
             'note' => $post['note'],
         ]);
         return redirect()->to('borrow')->with('info', 'data berhasil ditambah');
     }
-
+    
+    public function returnbook($id)
+    {
+        if (!session('id')) {
+            return redirect()->to(base_url())->with('error', 'Anda Harus Login');
+        }
+        $this->borrowModel->save([
+            'id' => $id,
+            'note' => "Selesai pinjam",
+        ]);
+        return redirect()->to('borrow');
+    }
     public function delete($id)
     {
         if (!session('id')) {
